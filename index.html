@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SafeGuard Insurance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Protecting What Matters Most</h1>
+      <p>Your family, your vehicle, your future — all covered.</p>
+      <button id="subscribeBtn">Enable Notifications</button>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <img src="images/feature1.jpg" alt="Life Insurance">
+      <h3>Life Insurance</h3>
+      <p>Secure financial peace for your loved ones.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/feature2.jpg" alt="Health Insurance">
+      <h3>Health Insurance</h3>
+      <p>Comprehensive health cover with great benefits.</p>
+    </div>
+
+    <div class="feature">
+      <img src="images/feature3.jpg" alt="Auto Insurance">
+      <h3>Auto Insurance</h3>
+      <p>Best protection for your driving journey.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 SafeGuard Insurance. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const subscribeBtn = document.getElementById("subscribeBtn");
+    subscribeBtn.addEventListener("click", async () => {
+      if ("serviceWorker" in navigator) {
+        const registration = await navigator.serviceWorker.register("/service-worker.js");
+        console.log("Service Worker registered:", registration);
+        alert("Notifications enabled!");
+      } else {
+        alert("Service workers not supported!");
+      }
+    });
+  </script>
+
+  <!-- Placeholder for Responsys Web Push SDK -->
+  <script src="YOUR_RESPONSYS_WEB_PUSH_SDK_URL"></script>
+</body>
+</html>
